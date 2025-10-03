@@ -13,14 +13,14 @@
     <div class="card shadow-lg p-4" style="width: 28rem;">
       <h3 class="text-center mb-4">Login</h3>
 
-      <!-- tampilkan error kalau ada -->
       <?php if(session()->getFlashdata('error')): ?>
         <div class="alert alert-danger">
           <?= session()->getFlashdata('error') ?>
         </div>
       <?php endif; ?>
 
-      <form method="post" action="<?= base_url('/login') ?>">
+     
+      <form method="post" action="<?= base_url('auth/login') ?>">
         <?= csrf_field() ?> 
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>

@@ -9,10 +9,13 @@ use CodeIgniter\Router\RouteCollection;
 // Default halaman root langsung ke login
 $routes->get('/', 'Auth::login');
 
-// AUTH
-$routes->get('/login', 'Auth::login');       // Tampilkan form login
-$routes->post('/login', 'Auth::check');      // Proses login
-$routes->get('/logout', 'Auth::logout');     // Logout
+
+$routes->get('/login', 'Auth::login');       
+//$routes->post('/login', 'Auth::check');      
+$routes->get('/logout', 'Auth::logout');     
+$routes->post('/auth/login', 'Auth::login');
+$routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/admin', 'Admin::index');
 
 // MAHASISWA CRUD
 $routes->get('/mahasiswa', 'Mahasiswa::index');                    // Tampil list
