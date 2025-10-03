@@ -19,42 +19,46 @@ class Auth extends Controller
             $user = $model->where('username', $username)->first();
 
             if ($user) {
-               
+                
                 if (password_verify($password, $user['password'])) {
                     $session->set([
-                        'id_pengguna' => $user['id_pengguna'],
-                        'username'    => $user['username'],
-                        'nama_depan'  => $user['nama_depan'],
+                        'id_pengguna'   => $user['id_pengguna'],
+                        'username'      => $user['username'],
+                        'nama_depan'    => $user['nama_depan'],
                         'nama_belakang' => $user['nama_belakang'],
-                        'role'        => $user['role'],
-                        'logged_in'   => true
+                        'role'          => $user['role'],
+                        'logged_in'     => true
                     ]);
-                    return redirect()->to('/dashboard');
+
+                    if ($user['role'] === 'Admin') {
+                        return redirect()->to('/admin');
+                    } else {
+                        return redirect()->to('/');
+                    }
                 }
 
-               
+          
                 if (md5($password) === $user['password']) {
-                   
                     $newHash = password_hash($password, PASSWORD_BCRYPT);
                     $model->update($user['id_pengguna'], ['password' => $newHash]);
 
                     $session->set([
-                        'id_pengguna' => $user['id_pengguna'],
-                        'username'    => $user['username'],
-                        'nama_depan'  => $user['nama_depan'],
+                        'id_pengguna'   => $user['id_pengguna'],
+                        'username'      => $user['username'],
+                        'nama_depan'    => $user['nama_depan'],
                         'nama_belakang' => $user['nama_belakang'],
-                        'role'        => $user['role'],
-                        'logged_in'   => true
+                        'role'          => $user['role'],
+                        'logged_in'     => true
                     ]);
+
                     if ($user['role'] === 'Admin') {
-            return redirect()->to('/admin');
-        } else {
-            return redirect()->to('/');
-        }
+                        return redirect()->to('/admin');
+                    } else {
+                        return redirect()->to('/');
+                    }
                 }
             }
 
-   
             $session->setFlashdata('error', 'Username atau password salah');
             return redirect()->to('/login');
         }

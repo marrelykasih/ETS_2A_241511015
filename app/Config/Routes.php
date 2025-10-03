@@ -16,6 +16,7 @@ $routes->get('/logout', 'Auth::logout');
 $routes->post('/auth/login', 'Auth::login');
 $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/admin', 'Admin::index');
+$routes->get('/', 'Anggota::index');
 
 // MAHASISWA CRUD
 $routes->get('/mahasiswa', 'Mahasiswa::index');                    // Tampil list

@@ -4,7 +4,7 @@
 <div class="card">
   <div class="card-body">
     <h4 class="mb-3">Anggota</h4>
-    <!-- ganti action form -->
+    
     <form method="post" action="<?= base_url('mahasiswa/store') ?>">
       <div class="mb-3">
         <label class="form-label">ID anggota</label>
