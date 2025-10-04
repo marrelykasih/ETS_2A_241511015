@@ -13,6 +13,6 @@ class Admin extends BaseController
         $model = new UserModel();
         $users = $model->findAll();
 
-        return view('admin/index', ['users' => $users]);
+        return view('admin/dashboard');
     }
 }

@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use App\Models\UserModel;
 use CodeIgniter\Controller;
@@ -21,7 +23,7 @@ class Auth extends Controller
             if ($user) {
 
                 //dd($user);
-                
+
                 if (password_verify($password, $user['password'])) {
                     $session->set([
                         'id_pengguna'   => $user['id_pengguna'],
@@ -31,17 +33,17 @@ class Auth extends Controller
                         'role'          => $user['role'],
                         'logged_in'     => true
                     ]);
-                //dd(session()->get('role'));
+                    //dd(session()->get('role'));
                     if ($user['role'] === 'Admin') {
-    session()->setFlashdata('success', 'Login sebagai Admin berhasil');
-    return redirect()->to('/admin');
-} else {
-    session()->setFlashdata('success', 'Login sebagai Public berhasil');
-    return redirect()->to('/');
-}
+                        session()->setFlashdata('success', 'Login sebagai Admin berhasil');
+                        return redirect()->to('/admin');
+                    } else {
+                        session()->setFlashdata('success', 'Login sebagai Public berhasil');
+                        return redirect()->to('/');
+                    }
                 }
 
-          
+
                 if (md5($password) === $user['password']) {
                     $newHash = password_hash($password, PASSWORD_BCRYPT);
                     $model->update($user['id_pengguna'], ['password' => $newHash]);
