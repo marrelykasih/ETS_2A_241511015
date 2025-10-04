@@ -56,7 +56,7 @@ class AnggotaAdmin extends BaseController
         'gelar_belakang'     => $this->request->getPost('gelar_belakang'),
         'jabatan'            => $this->request->getPost('jabatan'),
         'status_pernikahan'  => $this->request->getPost('status_pernikahan'),
-        'jumlah_anak'        => $this->request->getPost('jumlah_anak')
+        'jumlah_anak'        => $this->request->getPost('jumlah_anak'),
     ];
 
     $model->update($id, $data);
