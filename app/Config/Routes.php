@@ -22,7 +22,6 @@ $routes->get('/admin', 'Admin::index');
 // Anggota (Public)
 $routes->get('/', 'Anggota::index');
 
-// Anggota (CRUD)
 $routes->get('/admin/anggota', 'AnggotaAdmin::index');
 $routes->get('/admin/anggota/create', 'AnggotaAdmin::create');
 $routes->post('/admin/anggota/store', 'AnggotaAdmin::store');
