@@ -8,6 +8,6 @@ class AnggotaModel extends Model
     protected $primaryKey = 'id_anggota';
     protected $allowedFields = [
         'nama_depan', 'nama_belakang', 'gelar_depan', 'gelar_belakang',
-        'jabatan', 'status_pernikahan'
+        'jabatan', 'status_pernikahan', 'jumlah_anak'
     ];
 }

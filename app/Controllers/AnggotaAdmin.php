@@ -47,11 +47,21 @@ class AnggotaAdmin extends BaseController
     }
 
     public function update($id)
-    {
-        $model = new AnggotaModel();
-        $model->update($id, $this->request->getPost());
-        return redirect()->to('/admin/anggota');
-    }
+{
+    $model = new AnggotaModel();
+    $data = [
+        'gelar_depan'        => $this->request->getPost('gelar_depan'),
+        'nama_depan'         => $this->request->getPost('nama_depan'),
+        'nama_belakang'      => $this->request->getPost('nama_belakang'),
+        'gelar_belakang'     => $this->request->getPost('gelar_belakang'),
+        'jabatan'            => $this->request->getPost('jabatan'),
+        'status_pernikahan'  => $this->request->getPost('status_pernikahan'),
+        'jumlah_anak'        => $this->request->getPost('jumlah_anak'),
+    ];
+
+    $model->update($id, $data);
+    return redirect()->to('/admin/anggota');
+}
 
     public function delete($id)
     {
