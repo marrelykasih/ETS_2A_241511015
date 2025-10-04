@@ -49,6 +49,7 @@
                 <?php endif; ?>
             </tbody>
         </table>
+        <a href="<?= base_url('admin') ?>" class="btn btn-secondary">Kembali</a>
     </div>
 </body>
 

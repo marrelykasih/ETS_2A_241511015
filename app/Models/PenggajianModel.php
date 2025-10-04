@@ -7,6 +7,7 @@ class PenggajianModel extends Model
 {
     protected $table = 'penggajian';
     protected $allowedFields = ['id_anggota', 'id_komponen_gaji'];
+
     public function getPenggajian()
     {
         return $this->db->table('penggajian')
@@ -17,7 +18,6 @@ class PenggajianModel extends Model
             ->get()->getResultArray();
     }
 
-  
     public function getDetail($id)
     {
         return $this->db->table('penggajian')
@@ -26,5 +26,11 @@ class PenggajianModel extends Model
             ->join('komponen_gaji', 'komponen_gaji.id_komponen_gaji = penggajian.id_komponen_gaji')
             ->where('penggajian.id_anggota', $id)
             ->get()->getResultArray();
+    }
+
+    // 🔥 Alias biar nggak error kalau ada yang manggil getDetailByAnggota()
+    public function getDetailByAnggota($id)
+    {
+        return $this->getDetail($id);
     }
 }

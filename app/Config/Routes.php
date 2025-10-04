@@ -47,7 +47,12 @@ $routes->post('/admin/penggajian/update/(:num)', 'PenggajianAdmin::update/$1');
 $routes->get('/admin/penggajian/delete/(:num)', 'PenggajianAdmin::delete/$1');
 
 
-// Citizen
-$routes->get('citizen/dashboard', 'Citizen::dashboard');
-$routes->get('citizen/anggota', 'Citizen::anggota');
-$routes->get('citizen/penggajian', 'Citizen::penggajian');
+$routes->group('citizen', function($routes) {
+    $routes->get('dashboard', 'Citizen::dashboard');
+    $routes->get('anggota', 'Citizen::anggota');
+    $routes->get('penggajian', 'Citizen::penggajian');
+    $routes->get('penggajian/detail/(:num)', 'Penggajian::detail/$1');
+});
+
+$routes->get('citizen/penggajian', 'Citizen\Penggajian::index');
+$routes->get('citizen/penggajian/detail/(:num)', 'Citizen\Penggajian::detail/$1');
