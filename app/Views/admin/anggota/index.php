@@ -17,12 +17,13 @@
         <a href="<?= base_url('admin/anggota/create') ?>" class="btn btn-primary mb-3">Tambah Anggota</a>
 
         <table class="table table-bordered">
-            <thead class="table-dark">
+            <thead>
                 <tr>
-                    <th>ID Anggota</th>
+                    <th>ID</th>
                     <th>Nama Lengkap</th>
                     <th>Jabatan</th>
-                    <th>Take Home Pay</th>
+                    <th>Status</th>
+                    <th>Anak</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -46,6 +47,7 @@
                     </tr>
                 <?php endif; ?>
             </tbody>
+
         </table>
     </div>
 </body>
