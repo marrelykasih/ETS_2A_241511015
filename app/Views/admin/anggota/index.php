@@ -4,7 +4,6 @@
     <title>Data Anggota DPR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body class="p-4">
     <div class="container">
         <h1>Data Anggota DPR</h1>
@@ -48,7 +47,7 @@
                 <?php endif; ?>
             </tbody>
         </table>
-        <a href="<?= base_url('admin') ?>" class="btn btn-secondary">⬅ Kembali</a>
+        <a href="<?= base_url('admin') ?>" class="btn btn-secondary">Kembali</a>
     </div>
 </body>
 </html>

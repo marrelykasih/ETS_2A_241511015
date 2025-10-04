@@ -34,8 +34,9 @@ class AnggotaAdmin extends BaseController
 
     public function store()
     {
+        //dd($this->request->getPost());
         $model = new AnggotaModel();
-        $model->save($this->request->getPost());
+        $model->insert($this->request->getPost());
         return redirect()->to('/admin/anggota');
     }
 
