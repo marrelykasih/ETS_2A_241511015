@@ -14,7 +14,7 @@
     <input name="jabatan" class="form-control mb-2" placeholder="Jabatan (Ketua / Wakil Ketua / Anggota / Semua)">
     <input name="nominal" type="number" class="form-control mb-2" placeholder="Nominal">
     <input name="satuan" class="form-control mb-2" placeholder="Satuan (Bulan / Periode)">
-    <button type="submit" class="btn btn-success">Simpa</button>
+    <button type="submit" class="btn btn-success">Simpan</button>
   </form>
 </div>
 </body>

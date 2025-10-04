@@ -32,7 +32,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php if (!empty($komponen)): ?>
+      <?php if (!empt($komponen)): ?>
         <?php foreach ($komponen as $row): ?>
         <tr>
           <td><?= $row['id_komponen_gaji'] ?></td>
