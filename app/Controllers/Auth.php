@@ -39,7 +39,7 @@ class Auth extends Controller
                         return redirect()->to('/admin');
                     } else {
                         session()->setFlashdata('success', 'Login sebagai Public berhasil');
-                        return redirect()->to('/');
+                        return redirect()->to('/citizen');
                     }
                 }
 
@@ -60,7 +60,7 @@ class Auth extends Controller
                     if ($user['role'] === 'Admin') {
                         return redirect()->to('/admin');
                     } else {
-                        return redirect()->to('/');
+                        return redirect()->to('/citizen');
                     }
                 }
             }

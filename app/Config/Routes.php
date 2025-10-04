@@ -20,7 +20,7 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/admin', 'Admin::index');
 
 // Anggota (Public)
-$routes->get('/', 'Anggota::index');
+$routes->get('/citizen', 'Citizen::dashboard');
 
 $routes->get('/admin/anggota', 'AnggotaAdmin::index');
 $routes->get('/admin/anggota/create', 'AnggotaAdmin::create');
@@ -45,3 +45,9 @@ $routes->get('/admin/penggajian/detail/(:num)', 'PenggajianAdmin::detail/$1');
 $routes->get('/admin/penggajian/edit/(:num)', 'PenggajianAdmin::edit/$1');
 $routes->post('/admin/penggajian/update/(:num)', 'PenggajianAdmin::update/$1');
 $routes->get('/admin/penggajian/delete/(:num)', 'PenggajianAdmin::delete/$1');
+
+
+// Citizen
+$routes->get('citizen/dashboard', 'Citizen::dashboard');
+$routes->get('citizen/anggota', 'Citizen::anggota');
+$routes->get('citizen/penggajian', 'Citizen::penggajian');
