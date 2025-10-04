@@ -9,7 +9,7 @@
   <h1>Tambah Komponen Gaji</h1>
   <form method="post" action="<?= base_url('admin/komponen/store') ?>">
     <input name="id_komponen" class="form-control mb-2" placeholder="ID Komponen">
-    <inpt name="nama_komponen" class="form-control mb-2" placeholder="Nama Komponen">
+    <input name="nama_komponen" class="form-control mb-2" placeholder="Nama Komponen">
     <input name="kategori" class="form-control mb-2" placeholder="Kategori (Gaji Pokok / Tunjangan Melekat / Tunjangan Lain)">
     <input name="jabatan" class="form-control mb-2" placeholder="Jabatan (Ketua / Wakil Ketua / Anggota / Semua)">
     <input name="nominal" type="number" class="form-control mb-2" placeholder="Nominal">
