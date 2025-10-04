@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 class KomponenModel extends Model
 {
     protected $table      = 'komponen_gaji';
-    protected $primaryKey = 'id_komponen';
+    protected $primaryKey = 'id_komponen_gaji';
     protected $allowedFields = [
-        'id_komponen', 'nama_komponen', 'kategori', 'jabatan', 'nominal', 'satuan'
+        'nama_komponen', 'kategori', 'jabatan', 'nominal', 'satuan'
     ];
 }
