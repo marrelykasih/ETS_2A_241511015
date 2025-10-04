@@ -7,9 +7,9 @@ class Anggota extends BaseController
 {
     public function index()
     {
-        if (!session()->get('logged_in')) {
-            return redirect()->to('/login');
-        }
+       // if (!session()->get('logged_in')) {
+           // return redirect()->to('/login');
+        //}
 
         $id_pengguna = session()->get('id_pengguna');
 

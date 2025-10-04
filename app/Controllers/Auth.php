@@ -9,7 +9,7 @@ class Auth extends Controller
     {
         helper(['form']);
 
-        if ($this->request->getMethod() === 'post') {
+        if ($this->request->getMethod() === 'POST') {
             $session   = session();
             $model     = new UserModel();
 
@@ -19,6 +19,8 @@ class Auth extends Controller
             $user = $model->where('username', $username)->first();
 
             if ($user) {
+
+                //dd($user);
                 
                 if (password_verify($password, $user['password'])) {
                     $session->set([
@@ -29,12 +31,14 @@ class Auth extends Controller
                         'role'          => $user['role'],
                         'logged_in'     => true
                     ]);
-
+                //dd(session()->get('role'));
                     if ($user['role'] === 'Admin') {
-                        return redirect()->to('/admin');
-                    } else {
-                        return redirect()->to('/');
-                    }
+    session()->setFlashdata('success', 'Login sebagai Admin berhasil');
+    return redirect()->to('/admin');
+} else {
+    session()->setFlashdata('success', 'Login sebagai Public berhasil');
+    return redirect()->to('/');
+}
                 }
 
           
