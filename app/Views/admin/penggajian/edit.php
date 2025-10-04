@@ -27,7 +27,7 @@
     <?php endforeach; ?>
     <br>
     <button type="submit" class="btn btn-success">Simpan Perubahan</button>
-    <a href="<?= base_url('admin/penggajian') ?>" class="btn btn-secondary">Kembali</a>
+    <a href="<?= base_ul('admin/penggajian') ?>" class="btn btn-secondary">Kembali</a>
   </form>
 </div>
 </body>
